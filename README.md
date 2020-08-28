@@ -1,27 +1,23 @@
-# GithubSearchApp
+# Search App
+#### Github Search App, Version 1.0.0
+#### By **{Patrick Ibuka Mshindi}**
+## Description
+This is an application where users may enter a GitHub username into a form, submit it, and see names and descriptions of that person's public repositories. A person can also look for repositories. The application should
+* display GitHub information such as the  username, profile photos and a list of repositories.
+* make use of the GitHub API to display this information
+ 
+## Setup/Installation Requirements
+* The project made was created using
+* HTML
+* Angular CLI
+* CSS
+## Known Bugs
+At the moment there are no known issues.
+## Technologies Used
+The project made us of Angular  classes routing , directives and pipes.
+## Support and contact details
+If you want to contact me reach me at 123@gmail.com
+## Link to live site: 
+## License [MIT license](https://opensource.org/licenses/MIT)
+## (c) 2020 Ibukamshindi
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
