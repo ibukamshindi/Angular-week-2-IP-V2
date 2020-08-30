@@ -9,10 +9,23 @@ import {Repository} from '../repository-class/repository';
   styleUrls: ['./search-bar.component.css']
 })
 export class SearchBarComponent implements OnInit {
+  user:User;
+  repository:Repository;
 
-  constructor() { }
+  constructor(private http:HttpClient) { 
 
-  ngOnInit(): void {
   }
 
+  ngOnInit() {
+    interface ApiResponse{
+     user:string;
+     repository:string; 
+    }
+
+    this.http.get<ApiResponse>(" 'https://api.github.com/users/daneden?03fec474368a1b5cd7c7e402f1f2ad0ac0d06fe0' ").subscribe(data=>{
+      this.user=new User(data.user)
+      this.repository=new Repository(data.repository)
+    })
+
+  }
 }
