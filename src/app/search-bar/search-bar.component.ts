@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {User} from '../user-class/user';
-import {Repository} from '../repository-class/repository';
+import{HttpClient} from '@angular/common/http';
+import {ApiRequestService} from '../service-request/api-request.service';
+import { from } from 'rxjs';
+import { User } from '../user-class/user';
+import { Repository } from '../repository-class/repository';
+
 
 @Component({
   selector: 'app-search-bar',
@@ -12,20 +15,12 @@ export class SearchBarComponent implements OnInit {
   user:User;
   repository:Repository;
 
-  constructor(private http:HttpClient) { 
-
-  }
+  constructor(private userService:ApiRequestService) {  }
 
   ngOnInit() {
-    interface ApiResponse{
-     user:string;
-     repository:string; 
-    }
-
-    this.http.get<ApiResponse>(" 'https://api.github.com/users/daneden?03fec474368a1b5cd7c7e402f1f2ad0ac0d06fe0' ").subscribe(data=>{
-      this.user=new User(data.user)
-      this.repository=new Repository(data.repository)
-    })
-
+    this.userService.userRequest()
+    this.user = this.userService.user
+    this.userService.userRequest()
+    this.repository = this.userService.repository
   }
 }
