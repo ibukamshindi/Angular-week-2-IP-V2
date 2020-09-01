@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import{HttpClient} from '@angular/common/http';
+import { Component, OnInit,Output,EventEmitter } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 import {ApiRequestService} from '../service-request/api-request.service';
 import { from } from 'rxjs';
 import { User } from '../user-class/user';
 import { Repository } from '../repository-class/repository';
+import {NgForm} from '@angular/forms';
 
 
 @Component({
@@ -12,15 +13,37 @@ import { Repository } from '../repository-class/repository';
   styleUrls: ['./search-bar.component.css']
 })
 export class SearchBarComponent implements OnInit {
-  user:User;
-  repository:Repository;
+  searchUser:User;
+  searchUSer:Repository
+  @Output() userRequest = new EventEmitter<any>();
 
-  constructor(private userService:ApiRequestService) {  }
+  constructor () {}
 
-  ngOnInit() {
-    this.userService.userRequest()
-    this.user = this.userService.user
-    this.userService.userRequest()
-    this.repository = this.userService.repository
+  showUser (form:NgForm){
+    this.userRequest.emit(this.searchUSer)
+    form.resetForm()
   }
+
+
+ngOnInit() {
+
+  }
+
 }
+
+
+
+
+
+//   user:User;
+//   repository:Repository;
+
+//   constructor(private userService:ApiRequestService) {  }
+
+//   ngOnInit() {
+//     this.userService.userRequest()
+//     this.user = this.userService.user
+//     this.userService.userRequest()
+//     this.repository = this.userService.repository
+//   }
+// }
