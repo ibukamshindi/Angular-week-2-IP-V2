@@ -1,1 +1,9 @@
-<p>git-display works!</p>
+<app-search-bar (searchUser)="getSearchUser($event)"></app-search-bar>
+<div *ngFor= 'let info of user '>
+  <p class="card-text">{{info.login}} </p>
+  <p class="card-text"> {{info.id}}</p>
+  <p class="card-text">{{info.avatar_url}} </p>
+  <p class="card-text"> {{info.html_url}}</p>
+  <p class="card-text"> {{info.repos_url}}</p>
+  
+</div>

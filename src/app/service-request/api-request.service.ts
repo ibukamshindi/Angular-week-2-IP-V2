@@ -8,37 +8,37 @@ import {Repository} from '../repository-class/repository'
   providedIn: 'root'
 })
 export class ApiRequestService {
-  user:User;
+  user:User []= [];
   repository:Repository;
-  get: any;
 
 
   constructor(private http: HttpClient) { 
-    this.user = new User ("")
-    this.repository = new Repository ("")
+    this.user = new User ("",0,"","");
+    
   }
   userRequest(){
     interface ApiResponse{
-      login:string
-      repos_url:string
+      login:string,
+      id:number,
+      avatar_url: string,
+      html_url: string,
+      
     }
-    let promise = new Promise ((resolve,reject)=>{
-      this.http.get<ApiResponse>('https://api.github.com/users+environment.gitApiKey').toPromise().then(response=>{
-        this.user.login = response.login
-        this.repository.repos_url= response.repos_url
+    return new Promise ((resolve,reject)=>{
+      this.user = [];
+      this.http.get<ApiResponse>('https://api.github.com/users?environment.gitApiKey').toPromise().then((results)=>{
+        this.user.push(results);
 
-        resolve()
+        resolve();
 
       },
       error=>{
-        this.user.login = "oops"
-        this.repository.repos_url = "oops"
+        reject(console.log('error'));
+      }
+      );
 
-        reject(error)
-      
-      })
-    })
-    return promise
+    });
+    
   }
 
 }

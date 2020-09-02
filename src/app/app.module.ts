@@ -8,12 +8,14 @@ import { AppComponent } from './app.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { GitDisplayComponent } from './git-display/git-display.component';
 import { from } from 'rxjs';
+import { AboutMeComponent } from './about-me/about-me.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchBarComponent,
-    GitDisplayComponent
+    GitDisplayComponent,
+    AboutMeComponent
   ],
   imports: [
     BrowserModule,
