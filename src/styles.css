@@ -3,9 +3,27 @@
 body{
   background: #f2f2f2;
   font-family: 'Lato', sans-serif;
+  background-image: url(./assets/pexels-johannes-plenio-1103970.jpg);
+  background-position:center;
+  height: 50vh;
+  background-size: cover;
+  font-weight: bold;
+
 }
 
-.search {
+.profile{
+margin: auto;
+border-style: groove;
+border-width: 4px;
+margin-right: 74%;
+padding-bottom: 20%;
+border-radius: 20px;
+}
+
+
+
+
+/* .search {
   width: 100%;
   position: relative;
   display: flex;
@@ -20,13 +38,13 @@ body{
   border-radius: 5px 0 0 5px;
   outline: none;
   color: #9DBFAF;
-}
+} */
 
-.searchTerm:focus{
+/* .searchTerm:focus{
   color: #00B4CC;
-}
+} */
 
-.searchButton {
+/* .searchButton {
   width: 40px;
   height: 56px;
   border: 1px solid #00B4CC;
@@ -36,10 +54,10 @@ body{
   border-radius: 0 5px 5px 0;
   cursor: pointer;
   font-size: 20px;
-}
+} */
 
 .wrap{
-  width: 30%;
+  width: 20%;
   position: absolute;
   top: 50%;
   left: 50%;

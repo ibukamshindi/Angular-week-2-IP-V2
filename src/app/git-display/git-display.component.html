@@ -1,9 +1,13 @@
 <app-search-bar (searchUser)="getSearchUser($event)"></app-search-bar>
-<div *ngFor= 'let info of user '>
-  <img [src]="info.avatar_url" alt="Image">
-  <p class="card-text">{{info.login}} </p>
-  <p class="card-text"> {{info.id}}</p>
-  <a [href]="info.html_url" class="card-link btn"> {{info.html_url}}</a>
-  <br>
-  <a [href]= "info.repos_url" class="card-link btn"> {{info.repos_url}}</a>
+<div *ngFor="let info of user">
+  <div class="profile">
+    <p>
+      <img [src]="info.avatar_url" alt="Image" width="128px" />
+    </p>
+    <p class="card-text">{{ info.login | uppercase }}</p>
+    <p class="card-text">{{ info.id }}</p>
+    <a [href]="info.html_url" class="card-link btn"> {{ info.html_url }}</a>
+    <br />
+    <a [href]="info.repos_url" class="card-link btn"> {{ info.repos_url }}</a>
+  </div>
 </div>
