@@ -7,6 +7,7 @@
     <form (ngsubmit)='showUser(userform)' #userform='ngForm'>
       <input type="text" id="searchUser" name="searchUser" id="searchUser" [(ngModel)] ="searchUser" placeholder="search github">
       <input type="submit" value="Submit">
+      {{searchUser}}
     </form>
     <div>
       <blockquote>

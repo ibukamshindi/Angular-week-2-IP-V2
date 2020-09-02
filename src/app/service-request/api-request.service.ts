@@ -13,20 +13,19 @@ export class ApiRequestService {
 
 
   constructor(private http: HttpClient) { 
-    this.user = new User ("",0,"","");
+    // this.user = new User ("",0,"","");
     
   }
-  userRequest(){
+  userRequest(searchUser:string){
     interface ApiResponse{
       login:string,
-      id:number,
       avatar_url: string,
       html_url: string,
       
     }
     return new Promise ((resolve,reject)=>{
       this.user = [];
-      this.http.get<ApiResponse>('https://api.github.com/users?environment.gitApiKey').toPromise().then((results)=>{
+      this.http.get<ApiResponse>(environment.apiUrl+searchUser+environment.gitApiKey).toPromise().then((results)=>{
         this.user.push(results);
 
         resolve();

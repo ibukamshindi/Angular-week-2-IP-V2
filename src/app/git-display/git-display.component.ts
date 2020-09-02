@@ -14,7 +14,7 @@ export class GitDisplayComponent implements OnInit {
   constructor(private apirequestService:ApiRequestService ) { }
 
     getSearchUser(searchUser){
-      this.apirequestService.userRequest().then(
+      this.apirequestService.userRequest(searchUser).then(
         (success) =>{
           this.user = this.apirequestService.user
           console.log(this.user)
@@ -27,7 +27,7 @@ export class GitDisplayComponent implements OnInit {
     }
 
   ngOnInit() {
-    this.getSearchUser('daneden');
+    this.getSearchUser('ibukamshindi');
   }
 
 }

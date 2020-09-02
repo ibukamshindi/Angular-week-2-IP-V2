@@ -14,13 +14,13 @@ import {NgForm} from '@angular/forms';
 })
 export class SearchBarComponent implements OnInit {
   searchUser:User;
-  searchUSer:Repository
+  
   @Output() userRequest = new EventEmitter<any>();
 
   constructor () {}
 
   showUser (form:NgForm){
-    this.userRequest.emit(this.searchUSer)
+    this.userRequest.emit(this.searchUser)
     form.resetForm()
   }
 
