@@ -9,13 +9,15 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { GitDisplayComponent } from './git-display/git-display.component';
 import { from } from 'rxjs';
 import { AboutMeComponent } from './about-me/about-me.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchBarComponent,
     GitDisplayComponent,
-    AboutMeComponent
+    AboutMeComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
